@@ -19,5 +19,12 @@ class Settings(BaseSettings):
     debug: bool = False
     log_level: str = "INFO"
 
+    # LLM Provider Settings
+    groq_api_key: str = ""
+    llm_model: str = "openai/gpt-oss-20b"
+    llm_timeout_seconds: int = 30
+    llm_max_retries: int = 2
+    max_token: int = 512
+
 
 settings = Settings()

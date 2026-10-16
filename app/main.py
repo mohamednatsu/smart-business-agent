@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from app.api.tasks import router as tasks_router
 from app.config import settings
 from app.schemas.health import HealthResponse
 
@@ -22,3 +23,6 @@ async def health_check() -> HealthResponse:
         service=settings.app_name,
         version=settings.app_version,
     )
+
+
+app.include_router(tasks_router)
